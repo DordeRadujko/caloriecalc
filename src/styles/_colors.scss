@@ -1,0 +1,45 @@
+/* color themes */
+$colors: (
+  "black": var(--cc-black),
+  "white": var(--cc-white),
+  "green": var(--cc-green),
+  "green-light1": var(--cc-green-light1),
+  "green-light2": var(--cc-green-light2),
+  "blue": var(--cc-blue),
+  "yellow": var(--cc-yellow),
+  "yellow-light1": var(--cc-yellow-light1),
+  "red": var(--cc-red),
+  "red-light1": var(--cc-red-light1),
+  "grey": var(--cc-grey),
+  "grey-light1": var(--cc-grey-light1),
+  "grey-light2": var(--cc-grey-light2),
+  "grey-light3": var(--cc-grey-light3),
+  "grey-light4": var(--cc-grey-light4),
+  "grey-light5": var(--cc-grey-light5),
+  "background-primary": var(--cc-background-primary),
+  "background-secondary": var(--cc-background-secondary),
+  "text": var(--cc-text),
+);
+
+@each $key, $col in $colors {
+  /* colors .cc-color-"color-name" */
+  .cc-color-#{$key} {
+    color: $col !important;
+  }
+
+  /* background colors .cc-bgc-color-"color-name" */
+  .cc-bgc-color-#{$key} {
+    background-color: $col !important;
+  }
+
+  /* border colors .cc-bc-"color-name" */
+  .cc-bc-#{$key} {
+    border-color: $col !important;
+  }
+
+  /* outline colors -cc-oc-"color-name" */
+  .cc-oc-#{$key} {
+    outline-color: $col !important;
+  }
+}
+

@@ -1,0 +1,46 @@
+/* light colors */
+// $cc-l-black: #171717;
+// $cc-l-white: #FFFFFF;
+// $cc-l-green: #206B53;
+// $cc-l-green-light1: #1BA87B;
+// $cc-l-green-light2: lighten($cc-l-green, 60%);
+// $cc-l-yellow: #F1C550;
+// $cc-l-red: #FE5F55;
+// $cc-l-blue: #128494;
+// $cc-l-disabled: #AEAEAE;
+// $cc-l-grey: #E8E8E8;
+// $cc-l-grey-light1: #EEEEFF;
+// $cc-l-grey-light2: #F5F5F5;
+// $cc-l-grey-light3: #DDDDDD;
+// $cc-l-grey-light4: #CCCCCC;
+// $cc-l-grey-light5: #D4D4D4;
+
+/* dark colors */
+// $cc-d-black: #171717;
+// $cc-d-white: #FFFFFF;
+// $cc-d-green: #206B53;
+// $cc-d-green-light1: #1BA87B;
+// $cc-d-green-light2: #1BA87B;
+// $cc-d-yellow: green;
+// $cc-d-yellow-light1: lighten(green, 20%);
+// $cc-d-red: red;
+// $cc-d-red-light1: lighten(red, 40%);
+// $cc-d-red-light2: lighten(red, 20%);
+// $cc-d-blue: blue;
+// $cc-d-disabled: #979797;
+// $cc-d-grey: #E8E8E8;
+// $cc-d-grey-light1: #3B3B3B;
+// $cc-d-grey-light2: #808080;
+// $cc-d-grey-light3: #DDDDDD;
+// $cc-d-grey-light4: #CCCCCC;
+// $cc-d-grey-light5: #D4D4D4;
+
+/* padding, margin */
+$base-padding: 1rem;
+$base-margin: 1rem;
+
+/* border radius */
+$base-border-radius: 0.5rem;
+
+/* font size */
+$base-font-size: 1rem * 0.875;

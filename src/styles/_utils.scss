@@ -1,0 +1,220 @@
+@use 'sass:math';
+
+$utilities: (
+  "padding": (
+    id: 'p',
+    values: (
+      'xs': math.div($base-padding, 4),
+      'sm': math.div($base-padding, 2),
+      'md': $base-padding,
+      'lg': $base-padding * 2,
+      'xl': $base-padding * 3,
+      'xxl': $base-padding * 4,
+      'huge': $base-padding * 6
+    )
+  ),
+  "padding-top": (
+    id: 'pt',
+    values: (
+      'xs': math.div($base-padding, 4),
+      'sm': math.div($base-padding, 2),
+      'md': $base-padding,
+      'lg': $base-padding * 2,
+      'xl': $base-padding * 3,
+      'xxl': $base-padding * 4,
+      'huge': $base-padding * 6
+    )
+  ),
+  "padding-right": (
+    id: 'pr',
+    values: (
+      'xs': math.div($base-padding, 4),
+      'sm': math.div($base-padding, 2),
+      'md': $base-padding,
+      'lg': $base-padding * 2,
+      'xl': $base-padding * 3,
+      'xxl': $base-padding * 4,
+      'huge': $base-padding * 6
+    )
+  ),
+  "padding-bottom": (
+    id: 'pb',
+    values: (
+      'xs': math.div($base-padding, 4),
+      'sm': math.div($base-padding, 2),
+      'md': $base-padding,
+      'lg': $base-padding * 2,
+      'xl': $base-padding * 3,
+      'xxl': $base-padding * 4,
+      'huge': $base-padding * 6
+    )
+  ),
+  "padding-left": (
+    id: 'pl',
+    values: (
+      'xs': math.div($base-padding, 4),
+      'sm': math.div($base-padding, 2),
+      'md': $base-padding,
+      'lg': $base-padding * 2,
+      'xl': $base-padding * 3,
+      'xxl': $base-padding * 4,
+      'huge': $base-padding * 6
+    )
+  ),
+  "margin": (
+    id: 'm',
+    values: (
+      'xs': math.div($base-padding, 4),
+      'sm': math.div($base-padding, 2),
+      'md': $base-padding,
+      'lg': $base-padding * 2,
+      'xl': $base-padding * 3,
+      'xxl': $base-padding * 4,
+      'huge': $base-padding * 6
+    )
+  ),
+  "margin-top": (
+    id: 'mt',
+    values: (
+      'xs': math.div($base-padding, 4),
+      'sm': math.div($base-padding, 2),
+      'md': $base-padding,
+      'lg': $base-padding * 2,
+      'xl': $base-padding * 3,
+      'xxl': $base-padding * 4,
+      'huge': $base-padding * 6
+    )
+  ),
+  "margin-right": (
+    id: 'mr',
+    values: (
+      'xs': math.div($base-padding, 4),
+      'sm': math.div($base-padding, 2),
+      'md': $base-padding,
+      'lg': $base-padding * 2,
+      'xl': $base-padding * 3,
+      'xxl': $base-padding * 4,
+      'huge': $base-padding * 6
+    )
+  ),
+  "margin-bottom": (
+    id: 'mb',
+    values: (
+      'xs': math.div($base-padding, 4),
+      'sm': math.div($base-padding, 2),
+      'md': $base-padding,
+      'lg': $base-padding * 2,
+      'xl': $base-padding * 3,
+      'xxl': $base-padding * 4,
+      'huge': $base-padding * 6
+    )
+  ),
+  "margin-left": (
+    id: 'ml',
+    values: (
+      'xs': math.div($base-padding, 4),
+      'sm': math.div($base-padding, 2),
+      'md': $base-padding,
+      'lg': $base-padding * 2,
+      'xl': $base-padding * 3,
+      'xxl': $base-padding * 4,
+      'huge': $base-padding * 6
+    )
+  ),
+  "border-radius": (
+    id: 'br',
+    values: (
+      'sm': math.div($base-border-radius, 2),
+      'md': $base-border-radius,
+      'lg': $base-border-radius * 2
+    )
+  ),
+  "display": (
+    id: 'display',
+    values: (
+      'n': none,
+      'b': block,
+      'f': flex,
+      'i': inline,
+      'i-b': inline-block
+    )
+  ),
+  "align-items": (
+    id: "ai",
+    values: (
+      'start': start,
+      'center': center,
+      'end': end
+    )
+  ),
+  "justify-content": (
+    id: "jc",
+    values: (
+      'start': start,
+      'center': center,
+      'end': end,
+      'space-between': space-between,
+      'space-around': space-around
+    )
+  ),
+  "font-size": (
+    id: 'text',
+    values: (
+      'xxs': math.div($base-font-size, 4),
+      'xs': math.div($base-font-size, 2),
+      'sm': $base-font-size * 0.9,
+      'md': $base-font-size,
+      'lg': $base-font-size * 1.2,
+      'xl': $base-font-size * 1.5,
+      'xxl': $base-font-size * 2.5,
+      'huge': $base-font-size * 3
+    )
+  ),
+  "font-weight": (
+    id: 'text-weight',
+    values: (
+      '300': 300,
+      '400': 400,
+      '500': 500
+    )
+  ),
+  "font-style": (
+    id: 'text-style',
+    values: (
+      'italic': italic,
+      'bold': bold
+    )
+  ),
+  "cusor": (
+    id: 'cursor',
+    values: (
+      'pointer': pointer,
+      'not-allowed': not-allowed
+    )
+  )
+);
+
+/* padding         .cc-p"{'', 't', 'r', 'b', 'l'}"-"{'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'huge'}" */
+/* margin          .cc-m"{'', 't', 'r', 'b', 'l'}"-"{'xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'huge'}" */
+/* border radius   .cc-br-"{'sm', 'md', 'lg'}" */
+/* display         .cc-display-"{'n', 'b', 'f', 'i', 'i-b'}" */
+/* font size       .cc-text-"{'xxsmall', 'xsmall', 'small', 'medium', 'large', 'xlarge', 'huge'}" */
+/* font weight     .cc-text-weight-"{'300','400','500'}" */
+/* cursor          .cc-cursor-"{'pointer', 'not-allowed'}"*/
+/* justify content .cc-jc-{'start', 'center', 'end', 'space-between'}*/
+/* align items     .cc-ai-{'start', 'center', 'end'}*/
+@each $prop, $data in $utilities {
+  @each $size, $val in map-get($data, 'values') {
+    .cc-#{map-get($data, 'id')}-#{$size} {
+      #{$prop}: $val !important;
+    }
+  }
+}
+
+.h-100 {
+  height: 100% !important;
+}
+
+.cc-w-100 {
+  width: 100% !important;
+}
