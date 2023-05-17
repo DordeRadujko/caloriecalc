@@ -1,0 +1,77 @@
+<mat-dialog-content class="cc-bgc-color-background-secondary">
+
+  <!-- CONTENT -->
+  <div class="content">
+    <div class="edit-food">
+      <mat-form-field class="cc-mb-md">
+        <input
+          type="text"
+          matInput
+          placeholder="{{ 'app.title' | translate }}">
+      </mat-form-field>
+
+      <cc-divider></cc-divider>
+
+      <div class="cc-display-f cc-ai-center cc-jc-center cc-mt-md">
+        <h4 class="cc-mr-md cc-color-green-light1" style="white-space: nowrap;">{{ 'app.instert_nutritional_values' | translate }}:</h4>
+
+        <mat-form-field class="cc-mt-md">
+          <input
+            [(ngModel)]="selectedUnit"
+            type="text"
+            placeholder="{{ 'app.unit' | translate }}"
+            onkeypress="return false;"
+            matInput
+            [matAutocomplete]="auto">
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let unit of units; let i = index;" [value]="unit.name">
+              {{ unit.name }}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field class="cc-mt-md">
+        <input
+          type="number"
+          matInput
+          placeholder="{{ 'app.calories' | translate }}">
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          type="number"
+          matInput
+          placeholder="{{ 'app.proteins' | translate }}">
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          type="number"
+          matInput
+          placeholder="{{ 'app.carbohydrates' | translate }}">
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          type="number"
+          matInput
+          placeholder="{{ 'app.fats' | translate }}">
+      </mat-form-field>
+    </div>
+  </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions class="cc-bgc-color-background-secondary">
+  <cc-button-solid
+    class="cc-mr-md"
+    text="{{ 'app.confirm' | translate }}"
+    textColor="white"
+    backgroundColor="green-light1"
+    (click)="onAccept()">
+  </cc-button-solid>
+  <cc-button-solid
+    text="{{ 'app.cancel' | translate }}"
+    textColor="white"
+    backgroundColor="red"
+    (click)="onCancel()">
+  </cc-button-solid>
+</mat-dialog-actions>

@@ -1,0 +1,53 @@
+.content {
+  width: 70vw;
+  display: flex;
+  justify-content: center;
+}
+
+.edit-meal {
+  width: 50%;
+  height: 100%;
+  padding: 1rem;
+
+  &-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .content {
+    display: block;
+    width: 50vw;
+  }
+
+  .edit-meal {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .edit-meal {
+    &-box {
+      display: block;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .content {
+    width: 60vw;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .content {
+    width: 85vw;
+  }
+
+  .edit-meal {
+    padding: 1rem 0;
+  }
+}

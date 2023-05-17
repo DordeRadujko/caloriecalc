@@ -1,0 +1,18 @@
+.content {
+  width: 40vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1550px) {
+  .content {
+    width: 60vw;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .content {
+    width: 85vw;
+  }
+}

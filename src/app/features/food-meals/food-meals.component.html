@@ -1,0 +1,108 @@
+<div class="fm-container">
+
+  <!-- FOOD LIST -->
+  <div class="fm-container-food">
+    <cc-card>
+
+      <div class="cc-p-sm">
+        <div class="cc-pt-md cc-pb-lg" style="position: relative;">
+          <h2 class="cc-color-green-light1 cc-text-weight-500" style="text-align: center;">{{ 'app.food' | translate }}</h2>
+          <span style="position: absolute; right: 0; top: 8px;">
+            <cc-button-icon
+              class="cc-mr-xs"
+              icon="add_circle"
+              textColor="green-light1"
+              size="huge"
+              (click)="openDialog('edit-food-dialog')">
+            </cc-button-icon>
+          </span>
+        </div>
+
+        <mat-form-field class="cc-pr-lg cc-pl-lg">
+          <input
+            type="text"
+            matInput
+            placeholder="{{ 'app.search' | translate }}">
+        </mat-form-field>
+
+        <div class="cc-mb-lg">
+          <cc-list
+            [listData]="['Spaghetti', 'Spaghetti', 'Spaghetti', 'Spaghetti', 'Spaghetti', 'Spaghetti']"
+            [height]="'500px'"
+            [removable]="true"
+            [editable]="true"
+            (onEdit)="openDialog('edit-food-dialog')"
+            (onRemove)="openDialog('remove-item-dialog')">
+            <ng-template #itemTemplate let-ld>
+              <div class="cc-bgc-color-grey-light3 cc-br-sm cc-p-sm" style="text-align: center;">
+                {{ ld }}
+              </div>
+            </ng-template>
+          </cc-list>
+        </div>
+      </div>
+
+    </cc-card>
+  </div>
+
+  <!-- MEAL LIST-->
+  <div class="fm-container-meal">
+    <cc-card>
+
+      <div class="cc-p-sm">
+        <div class="cc-pt-md cc-pb-lg" style="position: relative;">
+          <h2 class="cc-color-green-light1 cc-text-weight-500" style="text-align: center;">{{ 'app.meals' | translate }}</h2>
+          <span style="position: absolute; right: 0; top: 8px;">
+            <cc-button-icon
+              class="cc-mr-xs"
+              icon="add_circle"
+              textColor="green-light1"
+              size="huge"
+              (click)="openDialog('edit-meal-dialog')">
+            </cc-button-icon>
+          </span>
+        </div>
+
+        <mat-form-field class="cc-pr-lg cc-pl-lg">
+          <input
+            type="text"
+            matInput
+            placeholder="{{ 'app.search' | translate }}">
+        </mat-form-field>
+
+        <div class="cc-mb-lg">
+          <cc-list
+            [listData]="['Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese']"
+            [height]="'500px'"
+            [removable]="true"
+            [editable]="true"
+            (onEdit)="openDialog('edit-meal-dialog')"
+            (onRemove)="openDialog('remove-item-dialog')">
+            <ng-template #itemTemplate let-ld>
+              <div class="cc-bgc-color-grey-light3 cc-br-sm cc-p-sm" style="text-align: center;">
+                {{ ld }}
+              </div>
+            </ng-template>
+          </cc-list>
+        </div>
+      </div>
+
+    </cc-card>
+  </div>
+
+</div>
+
+<!-- EDIT FOOD DIALOG -->
+<ng-template #editFoodDialog>
+  <edit-food-dialog (cancel)="closeDialog()"></edit-food-dialog>
+</ng-template>
+
+<!-- EDIT MEAL DIALOG -->
+<ng-template #editMealDialog>
+  <edit-meal-dialog (cancel)="closeDialog()"></edit-meal-dialog>
+</ng-template>
+
+<!-- REMOVE ITEM DIALOG -->
+<ng-template #removeItemDialog>
+  <remove-item-dialog (cancel)="closeDialog()"></remove-item-dialog>
+</ng-template>

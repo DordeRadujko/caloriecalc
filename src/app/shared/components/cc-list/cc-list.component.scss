@@ -1,0 +1,22 @@
+.list {
+  overflow: auto;
+
+  &-item {
+    padding: 0;
+
+    &:hover {
+      outline-width: 3px;
+      outline-style: solid;
+    }
+
+    &:last-child {
+      margin: 0 !important;
+    }
+  }
+
+  &-selected {
+    outline-width: 3px;
+    outline-style: solid;
+  }
+}
+

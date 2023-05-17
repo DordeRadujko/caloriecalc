@@ -1,0 +1,41 @@
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  min-height: 100%;
+
+  background: linear-gradient(-20deg, #206B53 25%, #DDDDDD 25.1%, #DDDDDD 75%, #206B53 75.1%);
+  padding: 20px;
+
+  &-box {
+    width: 40vw;
+    height: 75vh;
+    min-height: 520px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .register {
+    &-box {
+      width: 50vw;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .register {
+    &-box {
+      width: 80vw;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .register {
+    &-box {
+      width: 95vw;
+    }
+  }
+}

@@ -1,0 +1,115 @@
+<mat-dialog-content class="cc-bgc-color-background-secondary">
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <div class="edit-meal">
+      <mat-form-field>
+        <input
+          type="text"
+          matInput
+          placeholder="{{ 'app.title' | translate }}">
+      </mat-form-field>
+
+      <mat-form-field>
+        <textarea
+          [rows]="10"
+          matInput
+          placeholder="{{ 'app.enter_recipe' | translate }}">
+        </textarea>
+      </mat-form-field>
+
+      <div style="text-align: center;">
+        <h3 class="cc-color-green-light1 cc-pl-lg cc-pr-lg cc-pb-md cc-pt-xs">{{ 'app.calories' | translate }}: 1000kcal</h3>
+        <div class="cc-display-f cc-jc-space-around">
+          <h5 class="cc-color-green-light1 cc-pl-sm cc-pr-sm">{{ 'app.proteins' | translate }}: 30g</h5>
+          <h5 class="cc-color-green-light1 cc-pl-sm cc-pr-sm">{{ 'app.carbohydrates' | translate }}: 40g</h5>
+          <h5 class="cc-color-green-light1 cc-pl-sm cc-pr-sm">{{ 'app.fats' | translate }}: 10g</h5>
+        </div>
+      </div>
+    </div>
+
+    <cc-divider [vertical]="true"></cc-divider>
+
+    <div class="edit-meal">
+      <div class="edit-meal-box">
+
+        <mat-form-field class="cc-mr-sm">
+          <input
+            [(ngModel)]="selectedIngredient"
+            type="text"
+            placeholder="{{ 'app.search' | translate }}"
+            onkeypress="return false;"
+            matInput
+            [matAutocomplete]="auto">
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+            <mat-option *ngFor="let ingredient of ingredients; let i = index;" [value]="ingredient.name">
+              <div class="cc-p-sm">
+                <h4 class="cc-color-green-light1 cc-text-weight-500">{{ingredient.name}}</h4>
+                <div class="cc-display-f cc-ai-center cc-jc-center cc-w-100">
+                  <span class="cc-p-sm">1300 {{ 'app.kcal' | translate | lowercase }}</span>|
+                  <span class="cc-p-sm">25 {{ 'app.proteins_mark' | translate }}</span>|
+                  <span class="cc-p-sm">55 {{ 'app.carbohydrates_mark' | translate }}</span>|
+                  <span class="cc-p-sm">30 {{ 'app.fats_mark' | translate }}</span>
+                </div>
+              </div>
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+
+        <div>
+          <div class="cc-display-f cc-ai-center cc-jc-center">
+            <mat-form-field class="cc-pr-sm">
+              <input
+                type="number"
+                matInput
+                placeholder="{{ 'app.quantity' | translate }}">
+            </mat-form-field>
+
+            <div class="cc-color-green-light1 cc-mb-md">g</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cc-mb-md cc-display-f cc-jc-center">
+        <cc-button-solid
+          style="width: 30%;"
+          [size]="'sm'"
+          text="{{ 'app.add' | translate }}"
+          textColor="white"
+          backgroundColor="green-light1">
+        </cc-button-solid>
+      </div>
+
+      <cc-list
+        [listData]="['Ingredient 1', 'Ingredient 2', 'Ingredient 3', 'Ingredient 4', 'Ingredient 5', 'Ingredient 6', 'Ingredient 7', 'Ingredient 8']"
+        [height]="'300px'"
+        [removable]="true">
+        <ng-template #itemTemplate let-ld>
+          <div class="cc-bgc-color-grey-light3 cc-br-sm cc-p-sm" style="text-align: center;">
+            {{ ld }}
+          </div>
+        </ng-template>
+      </cc-list>
+    </div>
+
+  </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions class="cc-bgc-color-background-secondary">
+  <cc-button-solid
+    class="cc-mr-md"
+    text="{{ 'app.confirm' | translate }}"
+    textColor="white"
+    backgroundColor="green-light1"
+    (click)="onAccept()">
+  </cc-button-solid>
+  <cc-button-solid
+    text="{{ 'app.cancel' | translate }}"
+    textColor="white"
+    backgroundColor="red"
+    (click)="onCancel()">
+  </cc-button-solid>
+</mat-dialog-actions>

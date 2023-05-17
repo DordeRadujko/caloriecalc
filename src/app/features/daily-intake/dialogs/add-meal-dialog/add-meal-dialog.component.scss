@@ -1,0 +1,35 @@
+.content {
+  width: 60vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-meal,
+.add-food {
+  width: 70%;
+  height: 100%;
+}
+
+.quantity {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+@media screen and (max-width: 800px) {
+  .add-meal,
+  .add-food {
+    width: 100%;
+  }
+
+  .quantity {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .content {
+    width: 85vw;
+  }
+}

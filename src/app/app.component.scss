@@ -1,0 +1,27 @@
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.app-content {
+  flex: 1;
+  overflow: auto;
+}
+
+.sidebar-routes {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .header-routes {
+    display: none !important;
+  }
+
+  .sidebar-routes {
+    display: block;
+  }
+}
+
+

@@ -1,0 +1,38 @@
+<mat-list
+  class="list"
+  [ngStyle]="{'max-height': height}">
+
+  <mat-list-item *ngFor="let ld of listData; let i = index;">
+
+    <div class="cc-display-f cc-ai-center cc-p-xs">
+      <div class="list-item cc-br-sm cc-oc-green-light1"
+           style="flex: 1;"
+           [ngClass]="{'list-selected': selected === i && selectable}"
+           [ngStyle]="{'cursor': selectable ? 'pointer' : 'default'}"
+           (click)="select(i)">
+        <ng-container
+          [ngTemplateOutlet]="itemTemplateRef"
+          [ngTemplateOutletContext]="{$implicit: ld}">
+        </ng-container>
+      </div>
+
+      <cc-button-icon
+        class="cc-display-f cc-ml-xs"
+        icon="edit"
+        textColor="green-light1"
+        size="xl"
+        *ngIf="editable"
+        (click)="onEdit.emit(i)">
+      </cc-button-icon>
+      <cc-button-icon
+        class="cc-display-f cc-ml-xs"
+        icon="delete_forever"
+        textColor="red"
+        size="xl"
+        *ngIf="removable"
+        (click)="onRemove.emit(i)">
+      </cc-button-icon>
+    </div>
+  </mat-list-item>
+
+</mat-list>

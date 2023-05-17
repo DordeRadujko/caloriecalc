@@ -1,0 +1,13 @@
+.set-container {
+  height: 650px;
+}
+
+.settings {
+  width: 60%;
+}
+
+@media screen and (max-width: 1000px) {
+  .settings {
+    width: 100%;
+  }
+}

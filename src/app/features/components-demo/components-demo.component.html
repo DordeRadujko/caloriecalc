@@ -1,0 +1,460 @@
+<div class="cd-container">
+
+  <!-- COMPONENTS -->
+  <div class="cd-container-components">
+    <cc-card>
+
+      <!-- paginator -->
+      <div class="cc-mb-sm cc-p-sm cc-bgc-color-grey-light2">
+        <h3 class="cc-mb-sm">Paginator</h3>
+      </div>
+
+      <!-- loader -->
+      <div class="cc-mb-sm cc-p-sm cc-bgc-color-grey-light2">
+        <h3 class="cc-mb-sm">Loader</h3>
+      </div>
+
+      <!-- snack bar -->
+      <div class="cc-mb-sm cc-p-sm cc-bgc-color-grey-light2">
+        <h3 class="cc-mb-sm">Snack bar</h3>
+      </div>
+
+      <!-- toggle -->
+      <div class="cc-mb-md cc-p-sm cc-bgc-color-grey-light2">
+        <h3 class="cc-mb-sm">Toggle</h3>
+        <cc-card>
+          <cc-toggle
+            [checked]="darkMode"
+            (change)="toggleTheme($event)">
+          </cc-toggle>
+        </cc-card>
+      </div>
+
+      <!-- autocomplete -->
+      <div class="cc-mb-sm cc-p-sm cc-bgc-color-grey-light2">
+        <h3 class="cc-mb-sm">Autocomplete</h3>
+        <cc-card>
+          <mat-form-field>
+            <input
+              [(ngModel)]="selectedOption"
+              type="text"
+              placeholder="Search"
+              matInput
+              [matAutocomplete]="auto">
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+              <mat-option *ngFor="let option of filteredOptions; let i = index;" [value]="option.name">
+                <h5 class="cc-color-green">{{option.name}}</h5>
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </cc-card>
+      </div>
+
+      <!-- input/text area -->
+      <div class="cc-mb-sm cc-p-sm cc-bgc-color-grey-light2">
+        <h3 class="cc-mb-sm">Input/Text area</h3>
+        <cc-card>
+          <form [formGroup]="testForm">
+            <mat-form-field>
+              <input
+                type="email"
+                matInput
+                formControlName="email"
+                placeholder="Email">
+              <mat-error>
+                Email is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </form>
+
+          <mat-form-field>
+            <textarea
+              [(ngModel)]="name"
+              [rows]="10"
+              matInput
+              placeholder="Enter a text...">
+            </textarea>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input
+              type="text"
+              matInput
+              [(ngModel)]="name"
+              placeholder="Name">
+          </mat-form-field>
+
+          <button (click)="onSubmit()">Submit Data</button>
+        </cc-card>
+      </div>
+
+      <!-- divider -->
+      <div class="cc-mb-sm cc-p-sm cc-bgc-color-grey-light2">
+        <h3 class="cc-mb-sm">Divider</h3>
+        <cc-card>
+          <h4 class="cc-color-text">Horizontal divider:</h4>
+          <div class="cc-p-md">
+            <cc-divider></cc-divider>
+          </div>
+
+          <h4 class="cc-color-text">Vertical divider:</h4>
+          <div class="cc-p-md">
+            <div class="cc-display-f">
+              <div class="cc-p-md" style="width: 50px; height: 50px;">A</div>
+              <cc-divider [vertical]="true"></cc-divider>
+              <div class="cc-p-md" style="width: 50px; height: 50px;">B</div>
+            </div>
+          </div>
+        </cc-card>
+      </div>
+
+      <!-- list -->
+      <div class="cc-mb-sm cc-p-sm cc-bgc-color-grey-light2">
+        <h3 class="cc-mb-sm">List</h3>
+        <cc-card>
+          <cc-list
+            [listData]="['List item 1', 'List item 2', 'List item 3', 'List item 4', 'List item 5', 'List item 1', 'List item 2', 'List item 3', 'List item 4', 'List item 5']"
+            [selectable]="true"
+            [height]="'200px'">
+            <ng-template #itemTemplate let-ld>
+              <div class="cc-bgc-color-grey-light3 cc-display-f cc-ai-center cc-jc-center cc-p-sm">
+                {{ ld }}
+              </div>
+            </ng-template>
+          </cc-list>
+        </cc-card>
+      </div>
+
+      <!-- tabs -->
+      <div class="cc-mb-sm cc-p-sm cc-bgc-color-grey-light2">
+        <h3 class="cc-mb-sm">Tabs</h3>
+        <cc-card>
+          <cc-tabs
+            [tabs]="[{id: 0, label: 'Tab 1'}, {id: 1, label: 'Tab 2'}]"
+            (activeTabChange)="onTabChange($event)">
+          </cc-tabs>
+        </cc-card>
+      </div>
+
+      <!-- banner -->
+      <div class="cc-mb-sm cc-p-sm cc-bgc-color-grey-light2">
+        <h3 class="cc-mb-sm">Banner</h3>
+        <cc-card>
+          <div class="cc-mb-md">
+            <cc-banner [text]="'Text'" color="green"></cc-banner>
+          </div>
+          <div class="cc-mb-md">
+            <cc-banner [text]="'Text'" color="yellow"></cc-banner>
+          </div>
+          <div class="cc-mb-md">
+            <cc-banner [text]="'Text'" color="red"></cc-banner>
+          </div>
+          <div class="cc-mb-md">
+            <cc-banner [text]="'Text'" color="green" size="lg"></cc-banner>
+          </div>
+          <div class="cc-mb-md">
+            <cc-banner [text]="'Text'" color="yellow" size="lg"></cc-banner>
+          </div>
+          <div class="cc-mb-md">
+            <cc-banner [text]="'Text'" color="red" size="lg"></cc-banner>
+          </div>
+        </cc-card>
+      </div>
+
+      <!-- buttons -->
+      <div class="cc-mb-sm cc-p-sm cc-bgc-color-grey-light2">
+        <h3 class="cc-mb-md">Buttons</h3>
+        <cc-card>
+          <div class="cc-p-md" style="width: 50%;">
+            <h4 class="cc-mb-sm cc-color-text">Solid button:</h4>
+            <div class="cc-mb-sm">
+              <cc-button-solid
+                class="cc-mr-xs"
+                text="Confirm"
+                textColor="white"
+                backgroundColor="green">
+              </cc-button-solid>
+              <cc-button-solid
+                class="cc-mr-xs"
+                text="Understand"
+                textColor="white"
+                backgroundColor="yellow">
+              </cc-button-solid>
+              <cc-button-solid
+                class="cc-mr-xs"
+                text="Cancel"
+                textColor="white"
+                backgroundColor="red">
+              </cc-button-solid>
+              <cc-button-solid
+                text="Disabled"
+                [disabled]="true">
+              </cc-button-solid>
+            </div>
+            <div>
+              <cc-button-solid
+                class="cc-mr-xs"
+                text="Confirm"
+                textColor="white"
+                backgroundColor="green"
+                size="sm">
+              </cc-button-solid>
+              <cc-button-solid
+                class="cc-mr-xs"
+                text="Understand"
+                textColor="white"
+                backgroundColor="yellow"
+                size="sm">
+              </cc-button-solid>
+              <cc-button-solid
+                class="cc-mr-xs"
+                text="Cancel"
+                textColor="white"
+                backgroundColor="red"
+                size="sm">
+              </cc-button-solid>
+              <cc-button-solid
+                text="Disabled"
+                [disabled]="true"
+                size="sm">
+              </cc-button-solid>
+            </div>
+          </div>
+
+          <div class="cc-p-md" style="width: 50%;">
+            <h4 class="cc-mb-sm cc-color-text">Outline button:</h4>
+            <div class="cc-mb-sm">
+              <cc-button-outline
+                class="cc-mr-xs"
+                text="Confirm"
+                textColor="green"
+                backgroundColor="green-light2">
+              </cc-button-outline>
+              <cc-button-outline
+                class="cc-mr-xs"
+                text="Understand"
+                textColor="yellow"
+                backgroundColor="yellow-light1">
+              </cc-button-outline>
+              <cc-button-outline
+                class="cc-mr-xs"
+                text="Cancel"
+                textColor="red"
+                backgroundColor="red-light2">
+              </cc-button-outline>
+              <cc-button-outline
+                ext="Disabled"
+                [disabled]="true">
+              </cc-button-outline>
+            </div>
+            <div>
+              <cc-button-outline
+                class="cc-mr-xs"
+                text="Confirm"
+                textColor="green"
+                backgroundColor="green-light2"
+                size="sm">
+              </cc-button-outline>
+              <cc-button-outline
+                class="cc-mr-xs"
+                text="Understand"
+                textColor="yellow"
+                backgroundColor="yellow-light1"
+                size="sm">
+              </cc-button-outline>
+              <cc-button-outline
+                class="cc-mr-xs"
+                text="Cancel"
+                textColor="red"
+                backgroundColor="red-light2"
+                size="sm">
+              </cc-button-outline>
+              <cc-button-outline
+                text="Disabled"
+                [disabled]="true"
+                size="sm">
+              </cc-button-outline>
+            </div>
+          </div>
+
+          <div class="cc-p-md">
+            <h4 class="cc-mb-sm cc-color-text">Icon button:</h4>
+            <div class="cc-mb-sm">
+              <cc-button-icon class="cc-mr-xs" icon="menu" textColor="green" size="huge"></cc-button-icon>
+              <cc-button-icon class="cc-mr-xs" icon="add_circle" textColor="yellow" size="huge"></cc-button-icon>
+              <cc-button-icon class="cc-mr-xs" icon="home" textColor="red" size="huge"></cc-button-icon>
+              <cc-button-icon class="cc-mr-xs" icon="add_circle" [disabled]="true" size="huge"></cc-button-icon>
+            </div>
+            <div>
+              <cc-button-icon class="cc-mr-xs" icon="menu" textColor="green" size="xl"></cc-button-icon>
+              <cc-button-icon class="cc-mr-xs" icon="add_circle" textColor="yellow" size="xl"></cc-button-icon>
+              <cc-button-icon class="cc-mr-xs" icon="home" textColor="red" size="xl"></cc-button-icon>
+              <cc-button-icon class="cc-mr-xs" icon="add_circle" [disabled]="true" size="xl"></cc-button-icon>
+            </div>
+          </div>
+        </cc-card>
+      </div>
+
+      <!-- card -->
+      <div class="cc-mb-sm cc-p-sm cc-bgc-color-grey-light2">
+        <h3 class="cc-mb-sm">Card</h3>
+        <cc-card>
+          <h1 class="cc-color-grey">Card content</h1>
+        </cc-card>
+      </div>
+
+      <!-- dialog -->
+      <div class="cc-mb-sm cc-p-sm cc-bgc-color-grey-light2">
+        <h3 class="cc-mb-sm">Dialog</h3>
+        <cc-card>
+          <div style="width: 50%;">
+            <cc-button-solid
+              class="cc-mr-xs"
+              text="Open dialog"
+              textColor="white"
+              backgroundColor="green"
+              (click)="openDialog()">
+            </cc-button-solid>
+            <ng-template #dialogTemplate>
+              <cc-dialog-demo (cancel)="closeDialog()"></cc-dialog-demo>
+            </ng-template>
+          </div>
+        </cc-card>
+      </div>
+
+      <!-- tooltip -->
+      <div class="cc-mb-sm cc-p-sm cc-bgc-color-grey-light2">
+        <h3 class="cc-mb-sm">Tooltip</h3>
+        <cc-card>
+          <div class="cc-mb-sm" style="width: 50%;">
+            <h4 class="cc-mb-sm cc-color-text">Text tooltips:</h4>
+            <cc-button-solid
+              class="cc-mr-xs"
+              text="Above"
+              textColor="white"
+              backgroundColor="green"
+              matTooltip="Info about the action"
+              [matTooltipPosition]="'above'">
+            </cc-button-solid>
+            <cc-button-solid
+              class="cc-mr-xs"
+              text="Below"
+              textColor="white"
+              backgroundColor="green"
+              matTooltip="Info about the action"
+              [matTooltipPosition]="'below'">
+            </cc-button-solid>
+            <cc-button-solid
+              class="cc-mr-xs"
+              text="Left"
+              textColor="white"
+              backgroundColor="green"
+              matTooltip="Info about the action"
+              [matTooltipPosition]="'left'">
+            </cc-button-solid>
+            <cc-button-solid
+              class="cc-mr-xs"
+              text="Right"
+              textColor="white"
+              backgroundColor="green"
+              matTooltip="Info about the action"
+              [matTooltipPosition]="'right'">
+            </cc-button-solid>
+          </div>
+
+          <div class="cc-mb-sm" style="width: 50%;">
+            <h4 class="cc-mb-sm cc-color-text">Custom tooltips:</h4>
+            <cc-button-solid
+              class="cc-mr-xs"
+              text="Above"
+              textColor="white"
+              backgroundColor="red"
+              [mtxTooltip]="customTooltip"
+              [mtxTooltipPosition]="'above'">
+            </cc-button-solid>
+            <cc-button-solid
+              class="cc-mr-xs"
+              text="Below"
+              textColor="white"
+              backgroundColor="red"
+              [mtxTooltip]="customTooltip"
+              [mtxTooltipPosition]="'below'">
+            </cc-button-solid>
+            <cc-button-solid
+              class="cc-mr-xs"
+              text="Left"
+              textColor="white"
+              backgroundColor="red"
+              [mtxTooltip]="customTooltip"
+              [mtxTooltipPosition]="'left'">
+            </cc-button-solid>
+            <cc-button-solid
+              class="cc-mr-xs"
+              text="Right"
+              textColor="white"
+              backgroundColor="red"
+              [mtxTooltip]="customTooltip"
+              [mtxTooltipPosition]="'right'">
+            </cc-button-solid>
+          </div>
+
+          <ng-template #customTooltip>
+            <div class="cc-color-red">Custom tooltip!</div>
+            <div class="cc-color-black cc-text-md">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, culpa
+              esse praesentium temporibus ratione quas consequuntur saepe autem qui.
+            </div>
+          </ng-template>
+
+        </cc-card>
+      </div>
+
+      <!-- progress bar -->
+      <div class="cc-mb-sm cc-p-sm cc-bgc-color-grey-light2">
+        <h3 class="cc-mb-sm">Progress bar</h3>
+        <cc-card>
+          <div class="cc-mb-md">
+            <cc-progress-bar
+              [color]="'green'"
+              [value]="40"
+              matTooltip="40g / 180g"
+              [matTooltipPosition]="'above'">
+            </cc-progress-bar>
+          </div>
+
+          <div class="cc-mb-md">
+            <cc-progress-bar
+              [color]="'yellow'"
+              [value]="20"
+              matTooltip="20g / 180g"
+              [matTooltipPosition]="'above'">
+            </cc-progress-bar>
+          </div>
+
+          <div>
+            <cc-progress-bar
+              [color]="'red'"
+              [value]="80"
+              matTooltip="80g / 180g"
+              [matTooltipPosition]="'above'">
+            </cc-progress-bar>
+          </div>
+        </cc-card>
+      </div>
+
+      <!-- progress circle -->
+      <div class="cc-mb-sm cc-p-sm cc-bgc-color-grey-light2">
+        <h3 class="cc-mb-sm">Progress circle</h3>
+        <cc-card>
+          <div class="cc-display-f cc-ai-center cc-jc-center">
+            <cc-progress-circle
+              [done]="800"
+              [goal]="2400">
+            </cc-progress-circle>
+          </div>
+        </cc-card>
+      </div>
+
+    </cc-card>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="set-container">
+  <cc-card>
+
+    <div class="h-100 cc-display-f cc-ai-center cc-jc-center" style="flex-direction: column;">
+
+      <div class="settings">
+
+        <!-- user settings -->
+        <h2 class="cc-color-green-light1 cc-mb-md cc-text-weight-500" style="text-align: center;">{{ 'app.user_settings' | translate }}</h2>
+        <mat-form-field>
+          <input type="text" matInput placeholder="{{ 'app.first_name' | translate }}">
+        </mat-form-field>
+        <mat-form-field>
+          <input type="text" matInput placeholder="{{ 'app.last_name' | translate }}">
+        </mat-form-field>
+        <mat-form-field class="cc-pb-md">
+          <input type="text" matInput placeholder="{{ 'app.email' | translate }}">
+        </mat-form-field>
+
+        <!-- daily goal settings -->
+        <h2 class="cc-color-green-light1 cc-mb-md cc-text-weight-500" style="text-align: center;">{{ 'app.daily_intake_settings' | translate }}</h2>
+        <mat-form-field>
+          <input type="text" matInput placeholder="{{ 'app.calories' | translate }}">
+        </mat-form-field>
+        <mat-form-field>
+          <input type="text" matInput placeholder="{{ 'app.proteins' | translate }}">
+        </mat-form-field>
+        <mat-form-field>
+          <input type="text" matInput placeholder="{{ 'app.carbohydrates' | translate }}">
+        </mat-form-field>
+        <mat-form-field class="cc-pb-md">
+          <input type="text" matInput placeholder="{{ 'app.fats' | translate }}">
+        </mat-form-field>
+
+        <cc-button-solid
+          class="cc-mr-md"
+          text="{{ 'app.save_changes' | translate }}"
+          textColor="white"
+          backgroundColor="green-light1">
+        </cc-button-solid>
+
+      </div>
+
+    </div>
+
+  </cc-card>
+</div>

@@ -1,0 +1,66 @@
+.di-container {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  min-height: 650px;
+
+  &-progress {
+    flex: 5;
+  }
+
+  &-intake {
+    flex: 7;
+  }
+
+  .progress-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-title {
+      flex: 2;
+    }
+
+    &-bar {
+      flex: 3;
+    }
+  }
+
+  .macro-details {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
+@media screen and (max-width: 1650px) {
+  .di-container {
+    .progress-row {
+      display: block;
+
+      &-title {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .di-container {
+    display: block;
+
+    &-progress {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .di-container {
+    .macro-details {
+      display: block;
+      text-align: center;
+    }
+  }
+}

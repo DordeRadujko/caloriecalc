@@ -1,0 +1,62 @@
+<mat-dialog-content class="cc-bgc-color-background-secondary">
+
+  <!-- TABS -->
+  <cc-tabs
+    [tabs]="tabs"
+    (activeTabChange)="onTabChange($event)">
+  </cc-tabs>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- add food -->
+    <div *ngIf="activeTab === 0" class="cc-p-sm cc-pt-lg add-food">
+      <cc-list [listData]="['Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese']"
+        [selectable]="true" [height]="'350px'">
+        <ng-template #itemTemplate let-ld>
+          <div class="cc-bgc-color-grey-light3 cc-display-f cc-ai-center cc-jc-center cc-p-sm">
+            {{ ld }}
+          </div>
+        </ng-template>
+      </cc-list>
+
+      <div class="cc-pt-lg quantity cc-display-f cc-ai-start cc-jc-center">
+        <mat-form-field>
+          <input type="number" matInput placeholder="{{ 'app.quantity' | translate }}">
+        </mat-form-field>
+        <span class="cc-mt-xs cc-ml-sm cc-color-green-light1">g</span>
+      </div>
+    </div>
+
+    <!-- add meal -->
+    <div *ngIf="activeTab === 1" class="cc-p-md add-meal">
+      <cc-list [listData]="['Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese']"
+        [selectable]="true"
+        [height]="'448px'">
+        <ng-template #itemTemplate let-ld>
+          <div class="cc-bgc-color-grey-light3 cc-display-f cc-ai-center cc-jc-center cc-p-sm">
+            {{ ld }}
+          </div>
+        </ng-template>
+      </cc-list>
+    </div>
+
+  </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions class="cc-bgc-color-background-secondary">
+  <cc-button-solid
+    class="cc-mr-md"
+    text="{{ 'app.confirm' | translate }}"
+    textColor="white"
+    backgroundColor="green-light1"
+    (click)="onAccept()">
+  </cc-button-solid>
+  <cc-button-solid
+    text="{{ 'app.cancel' | translate }}"
+    textColor="white"
+    backgroundColor="red"
+    (click)="onCancel()">
+  </cc-button-solid>
+</mat-dialog-actions>

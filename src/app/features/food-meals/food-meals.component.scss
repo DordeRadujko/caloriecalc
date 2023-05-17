@@ -1,0 +1,25 @@
+.fm-container {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  min-height: 650px;
+
+  &-food {
+    flex: 1;
+  }
+
+  &-meal {
+    flex: 1;
+  }
+
+}
+
+@media screen and (max-width: 1300px) {
+  .fm-container {
+    display: block;
+
+    &-food {
+      margin-bottom: 30px;
+    }
+  }
+}

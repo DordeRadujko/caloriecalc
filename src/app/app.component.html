@@ -1,0 +1,147 @@
+<div class="app-wrapper">
+
+  <!-- header -->
+  <cc-toolbar>
+    <span class="cc-color-white cc-text-weight-400 cc-text-xxl cc-text-style-italic cc-mr-lg">CalorieCalc</span>
+
+    <nav class="header-routes">
+      <ul class="cc-display-f">
+        <li>
+          <a
+            class="cc-text-lg cc-mr-md cc-color-green-light1 cc-text-weight-400"
+            style="text-decoration: none;"
+            routerLink="/daily-intake"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page">
+            {{ 'app.daily_intake' | translate }}
+          </a>
+        </li>
+        <li>
+          <a
+            class="cc-text-lg cc-mr-md cc-color-green-light1 cc-text-weight-400"
+            style="text-decoration: none;"
+            routerLink="/food-meals"
+            routerLinkActive="active"
+            ariaCurrentWhenActive="page">
+            {{ 'app.food_and_meals' | translate }}
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+  </cc-toolbar>
+
+  <!-- content -->
+  <div class="app-content cc-bgc-color-grey-light3">
+    <cc-container *ngIf="true">
+
+      <!-- SIDEBAR -->
+      <div class="cc-p-sm cc-bgc-color-background-secondary cc-display-f cc-jc-space-between h-100"
+           style="width: 250px; flex-direction: column;"
+           sidebar>
+
+        <!-- user info and routes -->
+        <div>
+          <div class="cc-p-sm cc-display-f cc-ai-center">
+            <mat-icon class="cc-color-grey-light3 cc-text-huge">
+              {{ 'account_box' }}
+            </mat-icon>
+            <h3 class="cc-color-green-light1 cc-ml-sm cc-text-weight-500">Đorđe Radujko</h3>
+          </div>
+
+          <cc-divider></cc-divider>
+
+          <div class="cc-mt-sm">
+            <div class="sidebar-routes">
+              <div class="cc-m-sm" style="cursor: pointer;">
+                <a
+                  class="cc-color-green-light1 cc-p-sm cc-text-weight-500 cc-display-b"
+                  style="text-decoration: none;"
+                  routerLink="/daily-intake">
+                  {{ 'app.daily_intake' | translate }}
+                </a>
+                <cc-divider></cc-divider>
+              </div>
+              <div class="cc-m-sm" style="cursor: pointer;">
+                <a
+                  class="cc-color-green-light1 cc-p-sm cc-text-weight-500 cc-display-b"
+                  style="text-decoration: none;"
+                  routerLink="/food-meals">
+                  {{ 'app.food_and_meals' | translate }}
+                </a>
+                <cc-divider></cc-divider>
+              </div>
+            </div>
+            <div class="cc-m-sm">
+              <a
+                class="cc-color-green-light1 cc-p-sm cc-text-weight-500 cc-display-b"
+                style="text-decoration: none;"
+                routerLink="/settings">
+                {{ 'app.settings' | translate }}
+              </a>
+              <cc-divider></cc-divider>
+            </div>
+            <div class="cc-m-sm">
+              <a
+                class="cc-color-green-light1 cc-p-sm cc-text-weight-500 cc-display-b"
+                style="text-decoration: none;"
+                routerLink="/components-demo">
+                {{ 'app.components' | translate }}
+              </a>
+              <cc-divider></cc-divider>
+            </div>
+            <div class="cc-m-sm">
+              <a
+                class="cc-color-green-light1 cc-p-sm cc-text-weight-500 cc-display-b"
+                style="text-decoration: none;">
+                {{ 'app.logout' | translate }}
+              </a>
+              <cc-divider></cc-divider>
+            </div>
+          </div>
+        </div>
+
+        <!-- lang and theme settings -->
+        <div>
+          <div class="cc-pl-lg cc-pr-lg cc-display-f cc-ai-center cc-jc-center">
+            <h4 class="cc-mr-md cc-mb-sm cc-color-green-light1 cc-text-weight-500">{{ 'app.language' | translate }}:</h4>
+            <mat-form-field class="cc-mt-md">
+              <input
+                [(ngModel)]="selectedLang"
+                (ngModelChange)="changeLanguage()"
+                type="text"
+                placeholder="Language"
+                onkeypress="return false;"
+                matInput
+                [matAutocomplete]="auto">
+              <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                <mat-option *ngFor="let lang of langs; let i = index;" [value]="lang.name">
+                  {{ lang.name }}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </div>
+
+          <div class="cc-mb-xl cc-display-f cc-ai-center cc-jc-center">
+            <h4 class="cc-mr-md cc-color-green-light1 cc-text-weight-500">{{ 'app.dark_mode' | translate }}:</h4>
+            <cc-toggle (change)="changeTheme($event)"></cc-toggle>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTENT -->
+      <router-outlet content></router-outlet>
+
+    </cc-container>
+
+    <cc-container *ngIf="false">
+      <router-outlet content></router-outlet>
+    </cc-container>
+  </div>
+
+  <!-- footer -->
+  <div class="cc-bgc-color-green cc-color-white cc-p-md" style="text-align: center; z-index: 1;">
+    &#169; Copyright 2023
+  </div>
+
+</div>

@@ -1,0 +1,29 @@
+<mat-dialog-content class="cc-bgc-color-background-secondary">
+
+  <!-- CONTENT -->
+  <div class="content">
+    <div class="ingredients">
+      <h2 class="cc-color-green-light1 cc-mb-md cc-text-weight-500" style="text-align: center;">{{ 'app.ingredients' | translate }}</h2>
+
+      <cc-list
+        [listData]="['Ingredient1', 'Ingredient2', 'Ingredient3', 'Ingredient4', 'Ingredient5', 'Ingredient6', 'Ingredient7', 'Ingredient8']"
+        [height]="'300px'">
+        <ng-template #itemTemplate let-ld>
+          <div class="cc-bgc-color-grey-light3 cc-br-sm cc-p-sm" style="text-align: center;">
+            {{ ld }}
+          </div>
+        </ng-template>
+      </cc-list>
+    </div>
+  </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions class="cc-bgc-color-background-secondary">
+  <cc-button-solid
+    text="{{ 'app.cancel' | translate }}"
+    textColor="white"
+    backgroundColor="red"
+    (click)="onCancel()">
+  </cc-button-solid>
+</mat-dialog-actions>

@@ -1,0 +1,23 @@
+<h2 mat-dialog-title class="cc-color-text cc-text-weight-400 cc-bgc-color-background-secondary">Dialog title</h2>
+
+<mat-dialog-content class="cc-bgc-color-background-secondary">
+  <div class="content-dim cc-display-f cc-ai-center cc-jc-center">
+    <h2 class="cc-text-weight-400 cc-text-style-italic cc-color-text">Dialog content</h2>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions class="cc-bgc-color-background-secondary">
+  <cc-button-solid
+    class="cc-mr-md"
+    text="Confirm"
+    textColor="white"
+    backgroundColor="green"
+    (click)="onAccept()">
+  </cc-button-solid>
+  <cc-button-solid
+    text="Cancel"
+    textColor="white"
+    backgroundColor="red"
+    (click)="onCancel()">
+  </cc-button-solid>
+</mat-dialog-actions>

@@ -1,0 +1,153 @@
+<div class="di-container">
+
+  <!-- PROGRESS -->
+  <div class="di-container-progress cc-bgc-color-background-secondary">
+    <cc-card>
+
+      <!-- banner and progress circle -->
+      <div class="cc-mb-xl">
+        <div *ngIf="true">
+          <cc-banner text="{{'app.set_daily_goal_warn' | translate}}" color="yellow"></cc-banner>
+        </div>
+
+        <div class="cc-display-f cc-ai-center cc-jc-center cc-mt-lg">
+          <cc-progress-circle [done]="600" [goal]="2400"></cc-progress-circle>
+        </div>
+      </div>
+
+      <!-- macros progress bar -->
+      <div class="cc-p-md cc-display-f cc-jc-center" style="flex-direction: column;">
+        <div class="cc-mt-md progress-row">
+          <h4 class="progress-row-title cc-color-green-light1 cc-text-weight-500 cc-mb-sm">
+            {{ 'app.proteins' | translate }}
+          </h4>
+          <div class="progress-row-bar cc-mb-sm">
+            <cc-progress-bar
+              [color]="'green'"
+              [value]="40"
+              matTooltip="40g / 180g"
+              [matTooltipPosition]="'above'">
+            </cc-progress-bar>
+          </div>
+        </div>
+        <div class="cc-mt-md progress-row">
+          <h4 class="progress-row-title cc-color-green-light1 cc-text-weight-500 cc-mb-sm">
+            {{ 'app.carbohydrates' | translate }}
+          </h4>
+          <div class="progress-row-bar cc-mb-sm">
+            <cc-progress-bar
+              [color]="'yellow'"
+              [value]="20"
+              matTooltip="20g / 180g"
+              [matTooltipPosition]="'above'">
+            </cc-progress-bar>
+          </div>
+        </div>
+        <div class="cc-mt-md progress-row">
+          <h4 class="progress-row-title cc-color-green-light1 cc-text-weight-500 cc-mb-sm">
+            {{ 'app.fats' | translate }}
+          </h4>
+          <div class="progress-row-bar cc-mb-sm">
+            <cc-progress-bar
+              [color]="'red'"
+              [value]="80"
+              matTooltip="80g / 180g"
+              [matTooltipPosition]="'above'">
+            </cc-progress-bar>
+          </div>
+        </div>
+      </div>
+
+    </cc-card>
+  </div>
+
+  <!-- DAILY INTAKE -->
+  <div class="di-container-intake">
+    <cc-card>
+
+      <!-- list -->
+      <div class="cc-p-sm">
+        <div class="cc-pt-md cc-pb-lg" style="position: relative;">
+          <h2 class="cc-color-green-light1 cc-text-weight-500" style="text-align: center;">{{ 'app.daily_intake' | translate }}</h2>
+          <span style="position: absolute; right: 0; top: 8px;">
+            <cc-button-icon class="cc-mr-xs" icon="add_circle" textColor="green-light1" size="huge" (click)="openDialog('add-meal-dialog')"></cc-button-icon>
+          </span>
+        </div>
+        <div class="cc-mb-lg">
+          <cc-list
+            [listData]="['Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese', 'Spaghetti bolognese']"
+            [height]="'265px'"
+            [selectable]="true"
+            [removable]="true"
+            (onRemove)="removeMeal()">
+            <ng-template #itemTemplate let-ld>
+              <div class="cc-bgc-color-grey-light3 cc-br-sm cc-p-sm" style="text-align: center;">
+                {{ ld }}
+              </div>
+            </ng-template>
+          </cc-list>
+        </div>
+
+        <cc-divider></cc-divider>
+
+        <!-- details -->
+        <div class="cc-mt-lg">
+          <div class="cc-mb-md cc-display-f cc-jc-space-between">
+            <h4 class="cc-color-green-light1 cc-text-weight-500">Spaghetti bolognese</h4>
+            <a class="cc-color-green-light1" style="font-size: 13px; text-decoration: underline; cursor: pointer;" (click)="openDialog('show-ingredients-dialog')">{{ 'app.ingredients' | translate }}</a>
+          </div>
+
+          <p class="cc-pr-md cc-color-text" style="font-size: 13px; line-height: 1.2; max-height: 170px; overflow: auto;">
+            STEP 1
+            Put a large saucepan on a medium heat and add 1 tbsp olive oil.
+            STEP 2
+            Add 4 finely chopped bacon rashers and fry for 10 mins until golden and crisp.
+            STEP 3
+            Reduce the heat and add the 2 onions, 2 carrots, 2 celery sticks, 2 garlic cloves and the leaves from 2-3 sprigs
+            rosemary, all finely chopped, then fry for 10 mins. Stir the veg often until it softens.
+            STEP 4
+            Increase the heat to medium-high, add 500g beef mince and cook stirring for 3-4 mins until the meat is browned all over.
+            STEP 5
+            Add 2 tins plum tomatoes, the finely chopped leaves from ¾ small pack basil, 1 tsp dried oregano, 2 bay leaves, 2 tbsp
+            tomato purée, 1 beef stock cube, 1 deseeded and finely chopped red chilli (if using), 125ml red wine and 6 halved cherry
+            tomatoes. Stir with a wooden spoon, breaking up the plum tomatoes.
+            STEP 6
+            Bring to the boil, reduce to a gentle simmer and cover with a lid. Cook for 1 hr 15 mins stirring occasionally, until
+            you have a rich, thick sauce.
+            STEP 7
+            Add the 75g grated parmesan, check the seasoning and stir.
+            STEP 8
+            When the bolognese is nearly finished, cook 400g spaghetti following the pack instructions.
+            STEP 9
+            Drain the spaghetti and either stir into the bolognese sauce, or serve the sauce on top. Serve with more grated
+            parmesan, the remaining basil leaves and crusty bread, if you like.
+          </p>
+
+          <div class="cc-mt-md macro-details">
+            <h4 class="cc-mb-md cc-mr-md cc-color-green-light1 cc-text-weight-500">{{ 'app.calories' | translate }}: 1000kcal</h4>
+            <h4 class="cc-mb-md cc-mr-md cc-color-green-light1 cc-text-weight-500">{{ 'app.proteins' | translate }}: 45g</h4>
+            <h4 class="cc-mb-md cc-mr-md cc-color-green-light1 cc-text-weight-500">{{ 'app.carbohydrates' | translate }}: 60g</h4>
+            <h4 class="cc-mb-md cc-color-green-light1 cc-text-weight-500">{{ 'app.fats' | translate }}: 10g</h4>
+          </div>
+        </div>
+      </div>
+
+    </cc-card>
+  </div>
+
+</div>
+
+<!-- ADD MEAL DIALOG -->
+<ng-template #addMealDialog>
+  <add-meal-dialog (cancel)="closeDialog()"></add-meal-dialog>
+</ng-template>
+
+<!-- REMOVE MEAL DIALOG -->
+<ng-template #removeMealDialog>
+  <remove-meal-dialog (cancel)="closeDialog()"></remove-meal-dialog>
+</ng-template>
+
+<!-- SHOW INGREDIENTS DIALOG -->
+<ng-template #showIngredientsDialog>
+  <show-ingredients-dialog (cancel)="closeDialog()"></show-ingredients-dialog>
+</ng-template>

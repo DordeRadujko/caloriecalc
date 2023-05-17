@@ -1,0 +1,15 @@
+<mat-sidenav-container class="h-100">
+    <mat-sidenav #sidebar opened [mode]="screenWidth <= 800 ? 'over' : 'side'">
+      <ng-content select="[sidebar]"></ng-content>
+    </mat-sidenav>
+    <mat-sidenav-content style="position: relative;">
+      <div style="position: absolute; top: 0; left: 0; cursor: pointer;" class="cc-bgc-color-white" (click)="sidebar.toggle()" *ngIf="true">
+          <mat-icon class="cc-color-green" style="font-size: 30px;">
+            {{ 'keyboard_arrow_right' }}
+          </mat-icon>
+      </div>
+      <div class="container cc-bgc-color-background-primary">
+        <ng-content select="[content]"></ng-content>
+      </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

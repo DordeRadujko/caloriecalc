@@ -1,0 +1,26 @@
+<mat-dialog-content class="cc-bgc-color-background-secondary">
+
+  <!-- CONTENT -->
+  <div class="content">
+    <div class="cc-p-lg">
+      <h3 class="cc-color-green-light1 cc-text-weight-400" style="text-align: center;">{{ 'app.delete_item_daily_intake_warn' | translate }}</h3>
+    </div>
+  </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions class="cc-bgc-color-background-secondary">
+  <cc-button-solid
+    class="cc-mr-md"
+    text="{{ 'app.confirm' | translate }}"
+    textColor="white"
+    backgroundColor="green-light1"
+    (click)="onAccept()">
+  </cc-button-solid>
+  <cc-button-solid
+    text="{{ 'app.cancel' | translate }}"
+    textColor="white"
+    backgroundColor="red"
+    (click)="onCancel()">
+  </cc-button-solid>
+</mat-dialog-actions>

@@ -1,0 +1,18 @@
+<div class="progress-circle">
+  <div class="progress-circle__round_filled"
+       [ngStyle]="{ background: background }">
+    <div class="progress-circle__inner">
+      <div class="progress-circle__data">
+        <div class="cc-p-md">
+          <h2 class="cc-text-huge cc-text-weight-400" style="text-align: center;">{{ done }}</h2>
+        </div>
+        <div class="cc-p-md" style="border-top: 1px solid black;">
+          <h2 class="cc-text-huge cc-text-weight-400" style="text-align: center;">{{ goal }}</h2>
+        </div>
+        <div class="cc-p-md">
+          <h3 class="cc-text-xl cc-text-weight-400" style="text-align: center;">{{ 'app.calories' | translate | lowercase }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
