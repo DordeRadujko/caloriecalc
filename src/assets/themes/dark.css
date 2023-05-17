@@ -1,0 +1,20 @@
+:root {
+  --cc-black: #171717;
+  --cc-white: #ffffff;
+  --cc-green: #206B53;
+  --cc-green-light1: #1BA87B;
+  --cc-green-light2: #C7E9B0;
+  --cc-yellow: #F1C550;
+  --cc-yellow-light1: #FBFFB1;
+  --cc-red: #FE5F55;
+  --cc-red-light1: #FFD3B0;
+  --cc-blue: #128494;
+  --cc-grey: #aaaaaa;
+  --cc-grey-light1: #bbbbbb;
+  --cc-grey-light2: #cccccc;
+  --cc-grey-light3: #dddddd;
+  --cc-grey-light4: #eeeeee;
+  --cc-background-primary: #525252;
+  --cc-background-secondary: #3B3B3B;
+  --cc-text: #dddddd;
+}
